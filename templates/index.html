@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Donation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Blood Donation Management System</h1>
+    <nav>
+        <a href="{{ url_for('register') }}">Register as Donor</a> |
+        <a href="{{ url_for('request_blood') }}">Request Blood</a> |
+        <a href="{{ url_for('inventory') }}">View Inventory</a>
+    </nav>
+</body>
+</html>

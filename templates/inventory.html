@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blood Inventory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Blood Inventory</h1>
+    <table>
+        <tr>
+            <th>Blood Group</th>
+            <th>Units Available</th>
+        </tr>
+        {% for item in inventory %}
+        <tr>
+            <td>{{ item[0] }}</td>
+            <td>{{ item[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Pending Requests</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Blood Group</th>
+            <th>Contact</th>
+            <th>Status</th>
+        </tr>
+        {% for req in requests %}
+        <tr>
+            <td>{{ req[1] }}</td>
+            <td>{{ req[2] }}</td>
+            <td>{{ req[3] }}</td>
+            <td>{{ req[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
